@@ -1,4 +1,5 @@
 <h1>List of all <%=@position.downcase%>s</h1>
+<hr>
 <table border=1>
   <tr>
     <th>ID</th>
@@ -11,7 +12,7 @@
   <%@persons.each do |person_x|%>  
     <tr>
       <td><%=person_x.id%></td>
-      <td><img src=<%=person_x.image%> alt="<%=@position%>'s headshot"></td>
+      <td><img src=<%=person_x.image%> alt="<%=person_x.name%>'s headshot"></td>
       <td><%=person_x.name%></td>
       <td><%=person_x.dob%></td>
       <td><a href="/<%=@position.downcase%>s/<%=person_x.id%>">Show details</a></td>

@@ -10,7 +10,7 @@
   <dt>Bio</dt>
   <dd><%=@person.bio%></dd>
   <dt>Image</dt>
-  <img src=<%=@person.image%> alt="<%=@position%>'s headshot">
+  <dd><img src=<%=@person.image%> alt="<%=@person.name%>'s headshot"></dd>
   <dt>Created at</dt>
   <dd><%=@person.created_at%></dd>
   <dt>Updated at</dt>
@@ -24,20 +24,19 @@
 
 <table border=1>
   <tr>
-    <th>ID</th>
-    <th>Image</th>
     <th>Title</th>
     <th>Year</th>
     <th>Director</th>
+    <th>Character name</th>
     <th></th>
   </tr>
-  <%@movies.each do |movie_x|%>
+
+  <%@persons_movies.each do |movie_x|%>
     <tr>
-      <td><%=movie_x.id%></td>
-      <td><img src=<%=movie_x.image%> alt="Poster of movie directed by the director"></td>
       <td><%=movie_x.title%></td>
       <td><%=movie_x.year%></td>
-      <td><%=@person.name%></td>
+      <td><%=movie_x.director_name%></td>
+      <td><%=movie_x.character_name%></td>
       <td><a href="/movies/<%=movie_x.id%>">Show details</a></td>
     </tr>
   <%end%>

@@ -3,14 +3,14 @@ class DirectorController < ApplicationController
   def index
     @position = "Director"
     @persons = Director.all.order({:dob => :desc})
-    render({ :template => "director_templates/index" })
+    render({ :template => "misc_templates/people_index" })
   end
 
   def bio
     @position = "Director"
-    @person_id = params["person_id"]
+    @person_id = params["id"]
     @person = Director.where({:id => @person_id}).first
-    @movies = Movie.where({:id => @person_id})
+    @persons_movies = Movie.where({:director_id => @person_id})
     render({ :template => "director_templates/bio" })
   end
 
