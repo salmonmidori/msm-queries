@@ -3,10 +3,10 @@ class ActorController < ApplicationController
   def index
     @position = "Actor"
     @persons = Actor.all
-    render({ :template => "misc_templates/index" })
+    render({ :template => "index_templates/people_index" })
   end
 
-  def bio
+  def detail
     @position = "Actor"
     @person_id = params["id"]
     @person = Actor.where({:id => @person_id}).first
@@ -16,7 +16,7 @@ class ActorController < ApplicationController
       .where({:actor_id => @person_id})
       .select("movies.title as title, movies.year AS year, directors.name AS director_name, characters.name AS character_name")
       .to_a
-    render({ :template => "actor_templates/bio" })
+    render({ :template => "details_templates/actor_details" })
   end
 
 end
