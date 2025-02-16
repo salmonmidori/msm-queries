@@ -1,0 +1,23 @@
+<h1>List of all <%=@position.downcase%>s</h1>
+<hr>
+<table border=1>
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th></th>
+  </tr>
+
+  <%@movies.each do |movie_x|%>  
+    <tr>
+      <td><%=movie_x.id%></td>
+      <td><img src=<%=movie_x.image%> alt="<%=movie_x.title%>'s movie poster"></td>
+      <td><%=movie_x.title%></td>
+      <td><%=movie_x.year%></td>
+      <td><%=movie_x.director_name%></td>
+      <td><a href="/<%=@position.downcase%>s/<%=movie_x.id%>">Show details</a></td>
+    </tr>
+  <%end%>
+  </table>

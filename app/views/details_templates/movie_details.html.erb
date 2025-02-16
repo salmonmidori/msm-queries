@@ -1,0 +1,25 @@
+<h1><%=@position%> #<%=@movie.id%> details</h1>
+
+<a href="/<%=@position.downcase%>s">Go back</a>
+<hr>
+<dl>
+  <dt>Title</dt>
+  <dd><%=@movie.title%></dd>
+  <dt>Year</dt>
+  <dd><%=@movie.year%></dd>
+  <dt>Duration</dt>
+  <dd><%=@movie.duration%></dd>
+  <dt>Description</dt>
+  <dd><%=@movie.description%></dd>
+  <dt>Image</dt>
+  <dd><img src=<%=@movie.image%> alt="<%=@movie.title%>'s movie poster"></dd>
+  <dt>Director</dt>
+  <dd><%=@movie.director_name%></dd>
+  <dt>Created at</dt>
+  <dd><%=@movie.created_at%></dd>
+  <dt>Updated at</dt>
+  <dd><%=@movie.updated_at%></dd>
+</dl>
+
+
+<hr>
