@@ -1,0 +1,3 @@
+<h1><%=@age_position%> director</h1>
+<p>The <%=@age_position.downcase%> director in our dataset right now is <a href=<%=@person.id%>><%=@person.name%></a>, born on <%=@person.dob.strftime("%B %d, %Y")%>.</p>
+<p>(<a href="http://strftime.net/" target="_blank">http://strftime.net/</a> is handy for putting together the formatting strings for the <code>.strftime</code> method.)</p>
